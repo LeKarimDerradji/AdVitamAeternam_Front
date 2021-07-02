@@ -10,6 +10,7 @@ export const IpfsContextProvider = ({ children }) => {
 
   useEffect(() => {
     async function fetchData() {
+      console.log('connecting to ipfs')
       let ipfs = await create({
         config: {
           Addresses: {
@@ -20,6 +21,8 @@ export const IpfsContextProvider = ({ children }) => {
           },
         },
       });
+      console.log('connected to ipfs')
+      console.log(ipfs)
       setIpfs(ipfs);
     }
     fetchData();

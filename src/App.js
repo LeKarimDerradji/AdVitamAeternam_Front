@@ -1,24 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import { createContext } from "react";
+import Dapp from "./Dapp";
+import { useContract } from "web3-hooks";
+import { AdVitamAddress, AdVitamAbi } from "./contracts/AdVitamAeternam";
+import { AeternamAbi, AeternamAddress } from "./contracts/Aeternam";
+import { IpfsContextProvider } from "./contexts/ipfs";
+
+export const AdVitamContext = createContext(null);
+export const AeternamContext = createContext(null);
 
 function App() {
+  const advitam = useContract(AdVitamAddress, AdVitamAbi);
+  const aeternam = useContract(AeternamAddress, AeternamAbi);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AdVitamContext.Provider value={advitam}>
+      <AeternamContext.Provider value={aeternam}>
+      <IpfsContextProvider>
+        <Dapp />
+      </IpfsContextProvider>
+      </AeternamContext.Provider>
+    </AdVitamContext.Provider>
   );
 }
 

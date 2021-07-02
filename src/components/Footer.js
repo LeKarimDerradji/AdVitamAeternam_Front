@@ -5,7 +5,7 @@ import React from 'react'
 const Footer = () => {
     return (
         <Box mb='0' as='footer' bg='teal' textAlign='center'>
-            <Link fontSize='4xl' href='https://github.com/LeKarimDerradji' isExternal>Contact-Me</Link>
+            <Link fontSize='4xl' href='#' isExternal>Contact-Me</Link>
         </Box>
     )
 }

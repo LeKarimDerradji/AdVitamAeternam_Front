@@ -48,7 +48,7 @@ const Dappie = () => {
 
   return (
     <>
-      {ipfs && advitam && web3State.chainId === 4 ? (
+      {ipfs && web3State.chainId === 4 ? (
         <Container mt="30" mb="30">
           <Box mb="10" textAlign="center">
             <Text>Welcome to Ad-Vitam-Aeternam.</Text>

@@ -8,7 +8,7 @@ import { AdVitamContext } from "../App";
 
 
 const Dappie = () => {
-  const [web3State, _] = useContext(Web3Context);
+  const [web3State] = useContext(Web3Context);
   const advitam = useContext(AdVitamContext);
   const { ipfs, addMetadata } = useContext(IpfsContext);
   const [state, dispatch] = useReducer(inputReducer, inputInitialState)

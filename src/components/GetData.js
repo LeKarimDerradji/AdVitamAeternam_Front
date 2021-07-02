@@ -2,11 +2,10 @@ import { useState, useContext } from "react";
 import { Web3Context } from "web3-hooks";
 import { IpfsContext } from "../contexts/ipfs";
 import { AeternamContext } from "../App";
-import { ethers } from "ethers";
 import { Container, Box, Heading, Input, Button, Text, Spinner, FormControl, FormLabel } from "@chakra-ui/react";
 
 const GetData = () => {
-  const [web3State, _] = useContext(Web3Context);
+  const [web3State] = useContext(Web3Context);
   const aeternam = useContext(AeternamContext);
   const { ipfs, getMetadataFromCid } = useContext(IpfsContext);
   const [tokenID, setTokenID] = useState();

@@ -1,11 +1,8 @@
-import { useContext } from 'react';
 import {Container, Heading } from '@chakra-ui/react'
-import { Web3Context} from "web3-hooks";
 
 import React from 'react'
 
 const Header = () => {
-    const [web3State, login] = useContext(Web3Context);
     
     return (
         <>

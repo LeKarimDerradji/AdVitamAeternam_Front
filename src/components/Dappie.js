@@ -1,10 +1,10 @@
 import { useContext, useReducer } from "react";
 import { Web3Context } from "web3-hooks";
+import { AdVitamContext } from "../App";
 import { IpfsContext } from "../contexts/ipfs";
 import { inputReducer, inputInitialState } from "../reducers/inputReducer";
 import { ethers } from "ethers";
 import { Container, Box, Heading, Input, Button, Text, Spinner, FormControl, FormLabel } from "@chakra-ui/react";
-import { AdVitamContext } from "../App";
 
 
 const Dappie = () => {
